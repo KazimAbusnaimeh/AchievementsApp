@@ -43,7 +43,7 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
             ) {
                 val responseBody=response.body()
                 val myStringBuilder=StringBuilder()
-                val title1=myStringBuilder.append(responseBody!!.title)
+                val title1=myStringBuilder.append(responseBody!!.data[1].title)
                 binding.tvTitle1.text=title1
             }
 
