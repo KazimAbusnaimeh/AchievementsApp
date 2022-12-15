@@ -1,16 +1,18 @@
 package com.mycompany.achievementsapp.data
 
 import android.os.Parcelable
+import androidx.room.Entity
 import kotlinx.android.parcel.Parcelize
 
 
 @Parcelize
+//@Entity(tableName = "achievements")
 data class Achievements (
-    val data:List<Dataa>
+    val data:List<AchievementsData>
         ):Parcelable{
 
     @Parcelize
-    data class Dataa(
+    data class AchievementsData(
         val id: Int,
         val title: String,
         val label:String,

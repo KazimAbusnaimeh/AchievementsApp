@@ -1,5 +1,6 @@
 package com.mycompany.achievementsapp.api
 
+import androidx.lifecycle.LiveData
 import com.mycompany.achievementsapp.data.Achievements
 import retrofit2.Call
 import retrofit2.http.GET
@@ -10,5 +11,5 @@ interface Api {
     }
 
     @GET("achievements")
-    fun getAchievements():Call<Achievements>
+    fun getAchievements(): Call<Achievements>
 }
