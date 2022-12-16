@@ -4,9 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-            name="achievement"
-            type="String" />
+            name="data1"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData" />
+
+        <variable
+            name="data2"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData" />
+
+        <variable
+            name="record1"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record2"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record3"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record4"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record5"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record6"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record7"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record8"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record9"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record10"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record11"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record12"
+            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
     </data>
 
     <ScrollView
@@ -31,23 +84,23 @@
                     android:id="@+id/tv_personal_record"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{data1.title}"
                     android:textColor="#333333"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:text="Personal record" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_personal_record_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{data1.label}"
                     android:textColor="#666666"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:text="4 of 6" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -58,72 +111,72 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="25dp">
+                    android:layout_marginBottom="25dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record1.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_1"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record1.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_1"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record1.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record2.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_2"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record2.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_2"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record2.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -139,72 +192,72 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="25dp">
+                    android:layout_marginBottom="25dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record3.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_3"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record3.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_3"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record3.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record4.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_4"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record4.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_4"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record4.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -220,72 +273,73 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="25dp">
+                    android:layout_marginBottom="25dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record5.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_5"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record5.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_5"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record5.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record6.image}"
+                            />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_6"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record6.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_6"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record6.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -305,12 +359,12 @@
                     android:id="@+id/tv_virtual_races"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{data2.title}"
                     android:textColor="#333333"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:text="Personal record" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_virtual_races_label"
@@ -321,7 +375,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="" />
+                    tools:text="@{data2.label}" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -332,72 +386,73 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="25dp">
+                    android:layout_marginBottom="25dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record7.image}"
+                            android:clickable="@{record7.active}"/>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_7"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record7.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_7"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record7.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record8.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_8"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record8.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_8"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record8.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -413,72 +468,72 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="25dp">
+                    android:layout_marginBottom="25dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record9.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_9"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record9.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_9"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record9.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record10.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_10"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record10.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_10"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record10.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -494,72 +549,72 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="25dp">
+                    android:layout_marginBottom="25dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record11.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_11"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record11.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_11"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record11.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:paddingBottom="8dp"
-                        android:paddingTop="8dp"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <ImageView
                             android:id="@+id/iv_icon_12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            app:loadImageFromUri="@{record12.image}" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="title"
                             android:id="@+id/tv_title_12"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="label"
+                            android:text="@{record12.title}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tv_label_12"
-                            android:textSize="12sp"
-                            android:textColor="#000000" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{record12.label}"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 

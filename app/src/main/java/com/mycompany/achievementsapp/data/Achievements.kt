@@ -17,7 +17,7 @@ data class Achievements (
         val title: String,
         val label:String,
         val records:List<Records>
-    ):Parcelable{}
+    ):Parcelable{
 
     @Parcelize
     data class Records(
@@ -27,4 +27,4 @@ data class Achievements (
         val active:Boolean?=true,
         val image: String
     ):Parcelable{}
-}
+}}
