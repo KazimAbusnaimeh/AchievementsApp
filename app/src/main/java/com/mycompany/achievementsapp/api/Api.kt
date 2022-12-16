@@ -3,6 +3,7 @@ package com.mycompany.achievementsapp.api
 import androidx.lifecycle.LiveData
 import com.mycompany.achievementsapp.data.Achievements
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 
 interface Api {

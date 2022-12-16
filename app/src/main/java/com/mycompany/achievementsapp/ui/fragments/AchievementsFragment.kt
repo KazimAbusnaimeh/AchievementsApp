@@ -26,17 +26,12 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAchievementBinding.bind(view)
 
-         viewModel.achievementCallBack.enqueue(object : Callback<Achievements?> {
-             override fun onResponse(call: Call<Achievements?>, response: Response<Achievements?>) {
-                 val stringBuilder=java.lang.StringBuilder()
-                 val achievement=response.body()
-                 binding.tvTitle1.text=stringBuilder.append(achievement!!.data[0].title)
-             }
-
-             override fun onFailure(call: Call<Achievements?>, t: Throwable) {
-                 binding.tvTitle1.text=t.message
-             }
-         })
+        viewModel.setAchievement()
+        viewModel.achievement.observe(viewLifecycleOwner, Observer {
+            val stringBuilder = StringBuilder()
+            val title = stringBuilder.append(it!!.data[0].title)
+            binding.tvTitle1.text = title
+        })
 
     }
 }

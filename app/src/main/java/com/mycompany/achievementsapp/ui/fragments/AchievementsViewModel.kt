@@ -6,6 +6,7 @@ import com.mycompany.achievementsapp.data.AchievementRepository
 import com.mycompany.achievementsapp.data.Achievements
 import dagger.assisted.Assisted
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,7 +19,23 @@ class AchievementsViewModel @Inject constructor(
     private val repository: AchievementRepository
 ) : ViewModel() {
 
+    lateinit var achievement:MutableLiveData<Achievements>
 
-       val achievementCallBack= repository.getAllAchievements()
+    init {
+        achievement= MutableLiveData()
+    }
 
+    fun getAchievementObservable():MutableLiveData<Achievements>{
+        return achievement
+    }
+
+    fun setAchievement(){repository.getAllAchievements().enqueue(object : Callback<Achievements?> {
+        override fun onResponse(call: Call<Achievements?>, response: Response<Achievements?>) {
+            if (response.isSuccessful){
+            achievement.postValue(response.body())}
+        }
+
+        override fun onFailure(call: Call<Achievements?>, t: Throwable) {
+        }
+    })}
 }
