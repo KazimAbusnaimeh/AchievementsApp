@@ -8,12 +8,9 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.mycompany.achievementsapp.R
-import com.mycompany.achievementsapp.api.Api
 import com.mycompany.achievementsapp.databinding.ActivityMainBinding
-import com.mycompany.achievementsapp.ui.fragments.AchievementsViewModel
+import com.mycompany.achievementsapp.ui.viewmodels.AchievementsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

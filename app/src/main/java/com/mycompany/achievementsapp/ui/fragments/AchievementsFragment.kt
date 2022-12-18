@@ -1,12 +1,21 @@
 package com.mycompany.achievementsapp.ui.fragments
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.mycompany.achievementsapp.R
+import com.mycompany.achievementsapp.data.Achievements
 import com.mycompany.achievementsapp.databinding.FragmentAchievementBinding
+import com.mycompany.achievementsapp.ui.viewmodels.AchievementsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,6 +23,7 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
 
 
     val viewModel: AchievementsViewModel by hiltNavGraphViewModels(R.id.nav_graph)
+    private lateinit var iconsList:List<ImageView>
 
 
     private val TAG = "AchievementsFragment"
@@ -22,8 +32,10 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAchievementBinding.bind(view)
 
+        initLists()
         bindData()
-        activationState()
+        changeActivationState()
+        onItemClick()
 
     }
 
@@ -50,21 +62,35 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
         }
     }
 
-    private fun activationState() {
+    private fun changeActivationState() {
         binding.apply {
             viewModel.setRecordsList()
             viewModel.record.observe(viewLifecycleOwner, Observer {
                 val recordsList =
                     listOf(it[0],it[1],it[2],it[3],it[4],it[5],it[6],it[7],it[8],it[9],it[10],it[11])
-                val iconsList =
-                    listOf(ivIcon1, ivIcon2, ivIcon3, ivIcon4, ivIcon5, ivIcon6, ivIcon7, ivIcon8,
-                        ivIcon9, ivIcon10, ivIcon11, ivIcon12)
-                for ((x, i) in recordsList.withIndex()) {
-                        if (!i.active) {
-                            iconsList[x].isEnabled = false
-                            iconsList[x].alpha = 0.4f}
+
+                for ((index, record) in recordsList.withIndex()) {
+                        if (!record!!.active) {
+                            iconsList[index].isEnabled = false
+                            iconsList[index].alpha = 0.4f}
                 }
             })
+        }
+    }
+    private fun onItemClick(){
+        binding.apply {
+            for((i,x) in iconsList.withIndex()){
+                iconsList[i].setOnClickListener {
+                    findNavController().navigate(R.id.action_achievementsFragment_to_racesFragment)
+                }
+            }
+    }}
+
+    private fun initLists(){
+        binding.apply {
+            iconsList =
+                listOf(ivIcon1, ivIcon2, ivIcon3, ivIcon4, ivIcon5, ivIcon6, ivIcon7, ivIcon8,
+                    ivIcon9, ivIcon10, ivIcon11, ivIcon12)
         }
     }
 }

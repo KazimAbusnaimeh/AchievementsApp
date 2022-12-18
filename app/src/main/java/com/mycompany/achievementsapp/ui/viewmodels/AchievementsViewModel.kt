@@ -1,4 +1,4 @@
-package com.mycompany.achievementsapp.ui.fragments
+package com.mycompany.achievementsapp.ui.viewmodels
 
 import androidx.lifecycle.*
 import com.mycompany.achievementsapp.data.AchievementRepository
