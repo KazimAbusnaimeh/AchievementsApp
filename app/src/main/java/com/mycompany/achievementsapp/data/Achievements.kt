@@ -24,7 +24,7 @@ data class Achievements (
         val id: Int,
         val title: String,
         val label: String,
-        val active:Boolean,
-        val image: String
+        val active:Boolean?=true,
+        val image: String?=null
     ):Parcelable{}
 }}

@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_achievementsFragment_to_racesFragment"
             app:destination="@id/racesFragment" />
+        <argument
+            android:name="record"
+            app:argType="com.mycompany.achievementsapp.data.Achievements$AchievementsData$Records" />
+
     </fragment>
     <fragment
         android:id="@+id/racesFragment"
