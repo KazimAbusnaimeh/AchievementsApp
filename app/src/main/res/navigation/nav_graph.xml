@@ -8,15 +8,19 @@
     <fragment
         android:id="@+id/achievementsFragment"
         android:name="com.mycompany.achievementsapp.ui.fragments.AchievementsFragment"
-        android:label="fragment_achievement"
-        tools:layout="@layout/fragment_achievement" >
+        android:label="Achievements"
+        tools:layout="@layout/fragment_achievement">
         <action
             android:id="@+id/action_achievementsFragment_to_racesFragment"
             app:destination="@id/racesFragment" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_races"
         android:id="@+id/racesFragment"
         android:name="com.mycompany.achievementsapp.ui.fragments.RacesFragment"
-        android:label="RacesFragment" />
+        android:label="Race Details"
+        tools:layout="@layout/fragment_races">
+        <action
+            android:id="@+id/action_racesFragment_to_achievementsFragment"
+            app:destination="@id/achievementsFragment" />
+    </fragment>
 </navigation>
