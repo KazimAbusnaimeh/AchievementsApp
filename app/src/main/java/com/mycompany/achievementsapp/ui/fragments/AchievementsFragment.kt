@@ -72,16 +72,35 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
 
     private fun onItemClick() {
         binding.apply {
+            viewModel.setAchievement()
+            viewModel.achievement.observe(viewLifecycleOwner, Observer {
+                data1 = it.data[0]
+                data2 = it.data[1]
+                record1 = it.data[0].records[0]
+                record2 = it.data[0].records[1]
+                record3 = it.data[0].records[2]
+                record4 = it.data[0].records[3]
+                record5 = it.data[0].records[4]
+                record6 = it.data[0].records[5]
+                record7 = it.data[1].records[0]
+                record8 = it.data[1].records[1]
+                record9 = it.data[1].records[2]
+                record10 = it.data[1].records[3]
+                record11 = it.data[1].records[4]
+                record12 = it.data[1].records[5]
+
+                val recordsList =
+                    listOf(record1, record2, record3, record4, record5, record6, record7,
+                        record8, record9, record10, record11, record12)
             for ((i) in iconsList.withIndex()) {
                 iconsList[i].setOnClickListener {
-                    val record=Achievements.AchievementsData.Records(i,
-                        titlesList[i].text as String, labelsList[i].text.toString())
+                    val record=recordsList[i]
                     val bundle =bundleOf("record" to record)
 
                     findNavController().navigate(R.id.action_achievementsFragment_to_racesFragment,bundle)
                 }
             }
-        }
+        })}
     }
 
     private fun initLists() {
