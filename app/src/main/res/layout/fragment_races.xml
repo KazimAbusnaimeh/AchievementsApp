@@ -7,7 +7,7 @@
 
         <variable
             name="record"
-            type="com.mycompany.achievementsapp.data.Achievements.AchievementsData.Records" />
+            type="com.mycompany.achievementsapp.api.models.Achievements" />
     </data>
 
     <LinearLayout
@@ -32,7 +32,8 @@
             android:gravity="center"
             android:padding="4dp"
             android:textColor="#000000"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:text="00:00:00:00"/>
 
         <LinearLayout
             android:layout_width="match_parent"

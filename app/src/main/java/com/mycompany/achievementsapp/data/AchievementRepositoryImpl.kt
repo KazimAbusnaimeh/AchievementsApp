@@ -1,26 +1,26 @@
 package com.mycompany.achievementsapp.data
 
 import com.mycompany.achievementsapp.api.Api
+import com.mycompany.achievementsapp.api.models.Achievements
 import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import javax.inject.Inject
 
-class AchievementRepositoryImpl @Inject constructor(
+class AchievementRepositoryImpl (
     private val api: Api,
-//    private val achievementsDAO: AchievementsDAO
-) :
-    AchievementRepository {
-    //    override suspend fun insert(achievements: Achievements) {
-//        achievementsDAO.insertAchievement(achievements)
-//    }
-//
-//    override suspend fun getAll(): List<Achievements> {
-//        return achievementsDAO.getAllAchievements()
-//    }
+    private val achievementsDAO: AchievementsDAO
+) : AchievementRepository {
     lateinit var achievement: Achievements
 
-    override fun getAllAchievements():Call<Achievements> {
+    override fun getAllAchievements(): Call<Achievements> {
         return api.getAchievements()
     }
+
+    override suspend fun insertRecords(record: Achievements.AchievementsData.Records) {
+        achievementsDAO.insertRecords(record)
+    }
+
+    override suspend fun getAllRecords(): List<Achievements.AchievementsData.Records> {
+        return achievementsDAO.getAllRecords()
+    }
+
+
 }

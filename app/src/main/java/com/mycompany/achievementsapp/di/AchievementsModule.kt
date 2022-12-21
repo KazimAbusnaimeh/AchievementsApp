@@ -3,14 +3,11 @@ package com.mycompany.achievementsapp.di
 import com.mycompany.achievementsapp.api.Api
 import com.mycompany.achievementsapp.data.AchievementRepository
 import com.mycompany.achievementsapp.data.AchievementRepositoryImpl
-import com.mycompany.achievementsapp.data.Achievements
+import com.mycompany.achievementsapp.data.AchievementsDAO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -18,8 +15,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 @InstallIn(ViewModelComponent::class)
 object AchievementsModule {
     @Provides
-    fun providesWordRepository(api: Api):AchievementRepository{
-        return AchievementRepositoryImpl(api)
+    fun providesWordRepository(api: Api,dao: AchievementsDAO):AchievementRepository{
+        return AchievementRepositoryImpl(api,dao)
     }
 
     @Provides

@@ -10,9 +10,9 @@ import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.mycompany.achievementsapp.R
-import com.mycompany.achievementsapp.data.Achievements
 import com.mycompany.achievementsapp.databinding.FragmentAchievementBinding
 import com.mycompany.achievementsapp.ui.viewmodels.AchievementsViewModel
+import com.mycompany.achievementsapp.utils.Constants.ACHIEVEMENT_FRAGMENT_ARG_KEY
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -95,7 +95,7 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
             for ((i) in iconsList.withIndex()) {
                 iconsList[i].setOnClickListener {
                     val record=recordsList[i]
-                    val bundle =bundleOf("record" to record)
+                    val bundle =bundleOf(ACHIEVEMENT_FRAGMENT_ARG_KEY to record)
 
                     findNavController().navigate(R.id.action_achievementsFragment_to_racesFragment,bundle)
                 }

@@ -6,9 +6,10 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.mycompany.achievementsapp.R
-import com.mycompany.achievementsapp.data.Achievements
+import com.mycompany.achievementsapp.api.models.Achievements
 import com.mycompany.achievementsapp.databinding.FragmentRacesBinding
 import com.mycompany.achievementsapp.services.TimingService
+import com.mycompany.achievementsapp.utils.Constants.ACHIEVEMENT_FRAGMENT_ARG_KEY
 import com.mycompany.achievementsapp.utils.Constants.ACTION_PAUSE_SERVICE
 import com.mycompany.achievementsapp.utils.Constants.ACTION_START_OR_RESUME_SERVICE
 import com.mycompany.achievementsapp.utils.Utility
@@ -18,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class RacesFragment:Fragment(R.layout.fragment_races) {
 
     lateinit var binding: FragmentRacesBinding
-    lateinit var record :Achievements.AchievementsData.Records
+    lateinit var record : Achievements.AchievementsData.Records
 
     private var isRacing = false
     private var curTimeInMillis = 0L
@@ -31,13 +32,16 @@ class RacesFragment:Fragment(R.layout.fragment_races) {
         binding.btnStart.setOnClickListener{
             toggleRace()
         }
+        binding.btnStop.setOnClickListener{
+            toggleRace()
+        }
 
         subscribeToObservers()
 
     }
     private fun setLabel(){
         arguments?.let {
-            record=it.getParcelable("record")!!
+            record=it.getParcelable(ACHIEVEMENT_FRAGMENT_ARG_KEY)!!
         }
         binding.record=record
     }
@@ -70,10 +74,14 @@ class RacesFragment:Fragment(R.layout.fragment_races) {
         this.isRacing = isRacing
         if(!isRacing) {
 //            btnToggleRun.text = "Start"
-//            btnFinishRun.visibility = View.VISIBLE
+            binding.btnStart.visibility = View.VISIBLE
+            binding.btnStop.visibility = View.GONE
+            binding.btnFinish.visibility = View.VISIBLE
         } else {
 //            btnToggleRun.text = "Stop"
-//            btnFinishRun.visibility = View.GONE
+            binding.btnFinish.visibility = View.GONE
+            binding.btnStart.visibility = View.GONE
+            binding.btnStop.visibility = View.VISIBLE
         }
     }
 
