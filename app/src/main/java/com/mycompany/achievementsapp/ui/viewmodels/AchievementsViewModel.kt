@@ -20,7 +20,7 @@ class AchievementsViewModel @Inject constructor(
         achievement = MutableLiveData()
     }
 
-    fun saveRace(records: Achievements.AchievementsData.Records) = liveData {
+    fun saveRecord(records: Achievements.AchievementsData.Records) = liveData {
         try {
             repository.insertRecords(records)
         } catch (e: java.lang.Exception) {

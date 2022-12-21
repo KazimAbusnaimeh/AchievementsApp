@@ -5,23 +5,24 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/achievementsFragment">
 
+
     <fragment
         android:id="@+id/achievementsFragment"
         android:name="com.mycompany.achievementsapp.ui.fragments.AchievementsFragment"
-        android:label="Achievements"
+        android:label="AchievementsFragment"
         tools:layout="@layout/fragment_achievement">
         <action
             android:id="@+id/action_achievementsFragment_to_racesFragment"
             app:destination="@id/racesFragment" />
         <argument
             android:name="record"
-            app:argType="com.mycompany.achievementsapp.data.Achievements$AchievementsData$Records" />
-
+            app:argType="com.mycompany.achievementsapp.api.models.Achievements$AchievementsData$Records"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/racesFragment"
         android:name="com.mycompany.achievementsapp.ui.fragments.RacesFragment"
-        android:label="Race Details"
+        android:label="RacesFragment"
         tools:layout="@layout/fragment_races">
         <action
             android:id="@+id/action_racesFragment_to_achievementsFragment"
