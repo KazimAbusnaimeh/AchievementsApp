@@ -7,7 +7,7 @@
 
         <variable
             name="record"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
     </data>
 
     <LinearLayout

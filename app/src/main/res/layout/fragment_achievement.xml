@@ -7,59 +7,59 @@
 
         <variable
             name="data1"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData" />
 
         <variable
             name="data2"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData" />
 
         <variable
             name="record1"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record2"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record3"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record4"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record5"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record6"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record7"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record8"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record9"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record10"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record11"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
 
         <variable
             name="record12"
-            type="com.mycompany.achievementsapp.api.models.Achievements" />
+            type="com.mycompany.achievementsapp.api.models.Achievements.AchievementsData.Records" />
     </data>
 
     <ScrollView
