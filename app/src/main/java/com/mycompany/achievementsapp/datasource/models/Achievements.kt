@@ -1,4 +1,4 @@
-package com.mycompany.achievementsapp.api.models
+package com.mycompany.achievementsapp.datasource.models
 
 import android.os.Parcelable
 import androidx.room.Entity

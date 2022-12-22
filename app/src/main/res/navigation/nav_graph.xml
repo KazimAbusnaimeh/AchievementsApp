@@ -16,14 +16,14 @@
             app:destination="@id/racesFragment" />
         <argument
             android:name="record"
-            app:argType="com.mycompany.achievementsapp.api.models.Achievements$AchievementsData$Records"
+            app:argType="com.mycompany.achievementsapp.datasource.models.Achievements$AchievementsData$Records"
             app:nullable="true" />
     </fragment>
     <fragment
+        tools:layout="@layout/fragment_races"
         android:id="@+id/racesFragment"
         android:name="com.mycompany.achievementsapp.ui.fragments.RacesFragment"
-        android:label="RacesFragment"
-        tools:layout="@layout/fragment_races">
+        android:label="RacesFragment" >
         <action
             android:id="@+id/action_racesFragment_to_achievementsFragment"
             app:destination="@id/achievementsFragment" />
@@ -36,6 +36,9 @@
         android:name="com.mycompany.achievementsapp.ui.fragments.SavesFragment"
         android:label="SavesFragment"
         tools:layout="@layout/fragment_saves">
+        <action
+            android:id="@+id/action_savesFragment_to_racesFragment"
+            app:destination="@id/racesFragment" />
         <action
             android:id="@+id/action_savesFragment_to_achievementsFragment"
             app:destination="@id/achievementsFragment" />

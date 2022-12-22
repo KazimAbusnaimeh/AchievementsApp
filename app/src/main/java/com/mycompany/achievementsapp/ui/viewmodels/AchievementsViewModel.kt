@@ -2,7 +2,7 @@ package com.mycompany.achievementsapp.ui.viewmodels
 
 import androidx.lifecycle.*
 import com.mycompany.achievementsapp.data.AchievementRepository
-import com.mycompany.achievementsapp.api.models.Achievements
+import com.mycompany.achievementsapp.datasource.models.Achievements
 import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Callback

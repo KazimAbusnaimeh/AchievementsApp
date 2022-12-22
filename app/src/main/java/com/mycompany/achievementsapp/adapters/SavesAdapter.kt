@@ -1,12 +1,11 @@
 package com.mycompany.achievementsapp.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.mycompany.achievementsapp.api.models.Achievements
+import com.mycompany.achievementsapp.datasource.models.Achievements
 import com.mycompany.achievementsapp.databinding.ItemSaveBinding
 
 class SavesAdapter(private val interaction: Interaction?=null):ListAdapter<Achievements.AchievementsData.Records,SavesAdapter.SavesViewHolder>(SavesDC()) {
@@ -32,14 +31,14 @@ class SavesAdapter(private val interaction: Interaction?=null):ListAdapter<Achie
             oldItem: Achievements.AchievementsData.Records,
             newItem: Achievements.AchievementsData.Records
         ): Boolean {
-            return oldItem.id==newItem.id
+            return false
         }
 
         override fun areContentsTheSame(
             oldItem: Achievements.AchievementsData.Records,
             newItem: Achievements.AchievementsData.Records
         ): Boolean {
-            return oldItem==newItem
+            return false
         }
     }
 }

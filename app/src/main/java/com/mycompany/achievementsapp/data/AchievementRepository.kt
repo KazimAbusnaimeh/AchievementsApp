@@ -1,7 +1,7 @@
 package com.mycompany.achievementsapp.data
 
 import androidx.lifecycle.LiveData
-import com.mycompany.achievementsapp.api.models.Achievements
+import com.mycompany.achievementsapp.datasource.models.Achievements
 import retrofit2.Call
 
 interface AchievementRepository {

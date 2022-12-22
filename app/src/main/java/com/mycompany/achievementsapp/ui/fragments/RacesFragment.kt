@@ -2,16 +2,13 @@ package com.mycompany.achievementsapp.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import com.mycompany.achievementsapp.R
-import com.mycompany.achievementsapp.api.models.Achievements
+import com.mycompany.achievementsapp.datasource.models.Achievements
 import com.mycompany.achievementsapp.databinding.FragmentRacesBinding
 import com.mycompany.achievementsapp.services.TimingService
 import com.mycompany.achievementsapp.ui.viewmodels.AchievementsViewModel
@@ -39,7 +36,6 @@ class RacesFragment : Fragment(R.layout.fragment_races) {
         setLabel()
         subscribeToObservers()
         onButtonClicked()
-
     }
 
     private fun setLabel() {
@@ -47,7 +43,8 @@ class RacesFragment : Fragment(R.layout.fragment_races) {
             record = it.getParcelable(ACHIEVEMENT_FRAGMENT_ARG_KEY)!!
         }
         binding.record = record
-         race=record
+         race=Achievements.AchievementsData.Records(record.id,record.title,record.label,
+             record.active,record.image)
     }
 
     private fun onButtonClicked(){

@@ -1,6 +1,6 @@
 package com.mycompany.achievementsapp.di
 
-import com.mycompany.achievementsapp.api.Api
+import com.mycompany.achievementsapp.datasource.Api
 import com.mycompany.achievementsapp.data.AchievementRepository
 import com.mycompany.achievementsapp.data.AchievementRepositoryImpl
 import com.mycompany.achievementsapp.data.AchievementsDAO

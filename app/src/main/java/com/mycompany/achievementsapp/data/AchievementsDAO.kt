@@ -5,7 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.mycompany.achievementsapp.api.models.Achievements
+import com.mycompany.achievementsapp.datasource.models.Achievements
 
 @Dao
 interface AchievementsDAO {
