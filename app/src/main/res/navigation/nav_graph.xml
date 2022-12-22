@@ -27,5 +27,17 @@
         <action
             android:id="@+id/action_racesFragment_to_achievementsFragment"
             app:destination="@id/achievementsFragment" />
+        <action
+            android:id="@+id/action_racesFragment_to_savesFragment"
+            app:destination="@id/savesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savesFragment"
+        android:name="com.mycompany.achievementsapp.ui.fragments.SavesFragment"
+        android:label="SavesFragment"
+        tools:layout="@layout/fragment_saves">
+        <action
+            android:id="@+id/action_savesFragment_to_achievementsFragment"
+            app:destination="@id/achievementsFragment" />
     </fragment>
 </navigation>

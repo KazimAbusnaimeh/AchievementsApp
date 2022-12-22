@@ -29,9 +29,7 @@ class AchievementsViewModel @Inject constructor(
         emit(true)
     }
 
-    fun getAllRecords()= liveData<List<Achievements.AchievementsData.Records>>{
-        emit(repository.getAllRecords())
-    }
+    fun getAllRecords()= repository.getAllRecords()
 
     fun getAchievementObservable(): MutableLiveData<Achievements> {
         return achievement

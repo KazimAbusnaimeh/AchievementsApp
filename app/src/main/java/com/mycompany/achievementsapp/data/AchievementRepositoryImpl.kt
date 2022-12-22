@@ -1,5 +1,6 @@
 package com.mycompany.achievementsapp.data
 
+import androidx.lifecycle.LiveData
 import com.mycompany.achievementsapp.api.Api
 import com.mycompany.achievementsapp.api.models.Achievements
 import retrofit2.Call
@@ -18,7 +19,7 @@ class AchievementRepositoryImpl (
         achievementsDAO.insertRecords(record)
     }
 
-    override suspend fun getAllRecords(): List<Achievements.AchievementsData.Records> {
+    override fun getAllRecords(): LiveData<List<Achievements.AchievementsData.Records>> {
         return achievementsDAO.getAllRecords()
     }
 

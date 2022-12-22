@@ -26,7 +26,7 @@ data class Achievements(
             @PrimaryKey(autoGenerate = true)
             val id: Int,
             val title: String,
-            val label: String,
+            var label: String,
             val active: Boolean,
             val image: String
         ) : Parcelable {}
