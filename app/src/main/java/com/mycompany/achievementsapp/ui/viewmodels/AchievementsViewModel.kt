@@ -1,6 +1,8 @@
 package com.mycompany.achievementsapp.ui.viewmodels
 
-import androidx.lifecycle.*
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.mycompany.achievementsapp.data.AchievementRepository
 import com.mycompany.achievementsapp.datasource.models.Achievements
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +16,7 @@ class AchievementsViewModel @Inject constructor(
     private val repository: AchievementRepository
 ) : ViewModel() {
 
-    lateinit var achievement: MutableLiveData<Achievements>
+    var achievement: MutableLiveData<Achievements>
 
     init {
         achievement = MutableLiveData()
@@ -29,7 +31,7 @@ class AchievementsViewModel @Inject constructor(
         emit(true)
     }
 
-    fun getAllRecords()= repository.getAllRecords()
+    fun getAllRecords() = repository.getAllRecords()
 
     fun getAchievementObservable(): MutableLiveData<Achievements> {
         return achievement

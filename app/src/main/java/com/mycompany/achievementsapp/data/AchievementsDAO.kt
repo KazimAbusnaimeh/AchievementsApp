@@ -14,6 +14,6 @@ interface AchievementsDAO {
     suspend fun insertRecords(record: Achievements.AchievementsData.Records)
 
     @Query("Select * from achievements")
-     fun getAllRecords(): LiveData<List<Achievements.AchievementsData.Records>>
+    fun getAllRecords(): LiveData<List<Achievements.AchievementsData.Records>>
 
 }

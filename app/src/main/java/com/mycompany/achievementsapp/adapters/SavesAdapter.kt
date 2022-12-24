@@ -5,28 +5,30 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.mycompany.achievementsapp.datasource.models.Achievements
 import com.mycompany.achievementsapp.databinding.ItemSaveBinding
+import com.mycompany.achievementsapp.datasource.models.Achievements
 
-class SavesAdapter(private val interaction: Interaction?=null):ListAdapter<Achievements.AchievementsData.Records,SavesAdapter.SavesViewHolder>(SavesDC()) {
+class SavesAdapter(private val interaction: Interaction? = null) :
+    ListAdapter<Achievements.AchievementsData.Records, SavesAdapter.SavesViewHolder>(SavesDC()) {
 
-    inner class SavesViewHolder(private val binding:ItemSaveBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class SavesViewHolder(private val binding: ItemSaveBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item:Achievements.AchievementsData.Records){
-            binding.record=item
+        fun bind(item: Achievements.AchievementsData.Records) {
+            binding.record = item
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= SavesViewHolder (
-        ItemSaveBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = SavesViewHolder(
+        ItemSaveBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
     override fun onBindViewHolder(holder: SavesViewHolder, position: Int) =
         holder.bind(getItem(position))
 
-    interface Interaction{}
+    interface Interaction {}
 
-    private class SavesDC:DiffUtil.ItemCallback<Achievements.AchievementsData.Records>(){
+    private class SavesDC : DiffUtil.ItemCallback<Achievements.AchievementsData.Records>() {
         override fun areItemsTheSame(
             oldItem: Achievements.AchievementsData.Records,
             newItem: Achievements.AchievementsData.Records

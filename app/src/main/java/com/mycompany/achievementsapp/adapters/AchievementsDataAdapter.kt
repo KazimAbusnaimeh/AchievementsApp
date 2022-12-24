@@ -3,15 +3,12 @@ package com.mycompany.achievementsapp.adapters
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.mycompany.achievementsapp.R
 import com.mycompany.achievementsapp.databinding.ItemAchievementDataBinding
-import com.mycompany.achievementsapp.databinding.ItemRecordBinding
 import com.mycompany.achievementsapp.datasource.models.Achievements
 
 class AchievementsDataAdapter(activity: Activity, records: List<Achievements.AchievementsData>) :
@@ -39,7 +36,9 @@ class AchievementsDataAdapter(activity: Activity, records: List<Achievements.Ach
                 position == 0 -> {
                     recordAdapter.differ.submitList(dataList[position].records)
                 }
-                position == 1 -> {recordAdapter.differ.submitList(dataList[position].records)}
+                position == 1 -> {
+                    recordAdapter.differ.submitList(dataList[position].records)
+                }
             }
         }
     }

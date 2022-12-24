@@ -1,9 +1,10 @@
 package com.mycompany.achievementsapp.di
 
-import com.mycompany.achievementsapp.datasource.Api
 import com.mycompany.achievementsapp.data.AchievementRepository
 import com.mycompany.achievementsapp.data.AchievementRepositoryImpl
 import com.mycompany.achievementsapp.data.AchievementsDAO
+import com.mycompany.achievementsapp.datasource.Api
+import com.mycompany.achievementsapp.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +23,7 @@ object AchievementsModule {
     @Provides
     fun providesApi():Api{
         return Retrofit.Builder()
-                .baseUrl("https://786b905e-735c-4be6-adfb-949d5dadee32.mock.pstmn.io/")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(Api::class.java)

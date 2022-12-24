@@ -8,20 +8,21 @@ import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.mycompany.achievementsapp.R
-import com.mycompany.achievementsapp.datasource.models.Achievements
 import com.mycompany.achievementsapp.databinding.FragmentRacesBinding
+import com.mycompany.achievementsapp.datasource.models.Achievements
 import com.mycompany.achievementsapp.services.TimingService
 import com.mycompany.achievementsapp.ui.viewmodels.AchievementsViewModel
 import com.mycompany.achievementsapp.utils.Constants.ACHIEVEMENT_FRAGMENT_ARG_KEY
 import com.mycompany.achievementsapp.utils.Constants.ACTION_PAUSE_SERVICE
 import com.mycompany.achievementsapp.utils.Constants.ACTION_START_OR_RESUME_SERVICE
+import com.mycompany.achievementsapp.utils.Constants.START_TIMER
 import com.mycompany.achievementsapp.utils.Utility
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class RacesFragment : Fragment(R.layout.fragment_races) {
 
-    lateinit var race:Achievements.AchievementsData.Records
+    lateinit var race: Achievements.AchievementsData.Records
     lateinit var binding: FragmentRacesBinding
     lateinit var record: Achievements.AchievementsData.Records
     val viewModel: AchievementsViewModel by hiltNavGraphViewModels(R.id.nav_graph)
@@ -43,12 +44,14 @@ class RacesFragment : Fragment(R.layout.fragment_races) {
             record = it.getParcelable(ACHIEVEMENT_FRAGMENT_ARG_KEY)!!
         }
         binding.record = record
-         race=Achievements.AchievementsData.Records(record.id,record.title,record.label,
-             record.active,record.image)
+        race = Achievements.AchievementsData.Records(
+            record.id, record.title, record.label,
+            record.active, record.image
+        )
     }
 
-    private fun onButtonClicked(){
-        var time="00:00:00:00"
+    private fun onButtonClicked() {
+        var time = START_TIMER
         binding.apply {
             btnStart.setOnClickListener {
                 toggleRace()
@@ -56,8 +59,8 @@ class RacesFragment : Fragment(R.layout.fragment_races) {
             btnStop.setOnClickListener {
                 toggleRace()
             }
-            btnFinish.setOnClickListener{
-                time=tvRecordLabel.text.toString()
+            btnFinish.setOnClickListener {
+                time = tvRecordLabel.text.toString()
                 binding.btnStart.visibility = View.GONE
                 binding.btnFinish.visibility = View.GONE
                 binding.btnSave.visibility = View.VISIBLE
@@ -65,7 +68,7 @@ class RacesFragment : Fragment(R.layout.fragment_races) {
             }
             btnSave.setOnClickListener {
 
-                race.label=time
+                race.label = time
                 viewModel.saveRecord(race).observe(viewLifecycleOwner, Observer {})
                 findNavController().navigate(R.id.action_racesFragment_to_savesFragment)
             }
@@ -105,12 +108,10 @@ class RacesFragment : Fragment(R.layout.fragment_races) {
     private fun updateTracking(isRacing: Boolean) {
         this.isRacing = isRacing
         if (!isRacing) {
-//            btnToggleRun.text = "Start"
             binding.btnStart.visibility = View.VISIBLE
             binding.btnStop.visibility = View.GONE
             binding.btnFinish.visibility = View.VISIBLE
         } else {
-//            btnToggleRun.text = "Stop"
             binding.btnFinish.visibility = View.GONE
             binding.btnStart.visibility = View.GONE
             binding.btnStop.visibility = View.VISIBLE

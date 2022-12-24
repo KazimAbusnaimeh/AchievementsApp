@@ -15,13 +15,14 @@
         android:orientation="vertical"
         >
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:orientation="vertical"
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:padding="4dp"
+            android:layout_marginBottom="8dp"
+            android:paddingTop="4dp"
+            android:padding="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -47,7 +48,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="data label" />
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_records"

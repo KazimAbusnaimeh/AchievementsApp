@@ -5,11 +5,10 @@ import com.mycompany.achievementsapp.datasource.Api
 import com.mycompany.achievementsapp.datasource.models.Achievements
 import retrofit2.Call
 
-class AchievementRepositoryImpl (
+class AchievementRepositoryImpl(
     private val api: Api,
     private val achievementsDAO: AchievementsDAO
 ) : AchievementRepository {
-    lateinit var achievement: Achievements
 
     override fun getAllAchievements(): Call<Achievements> {
         return api.getAchievements()

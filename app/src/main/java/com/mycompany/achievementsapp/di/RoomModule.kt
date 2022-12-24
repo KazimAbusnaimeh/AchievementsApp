@@ -15,12 +15,13 @@ import dagger.hilt.components.SingletonComponent
 object RoomModule {
 
     @Provides
-    fun provideDataBase(@ApplicationContext context: Context):AchievementsDatabase{
-        return Room.databaseBuilder(context,AchievementsDatabase::class.java,"achievements.db").build()
+    fun provideDataBase(@ApplicationContext context: Context): AchievementsDatabase {
+        return Room.databaseBuilder(context, AchievementsDatabase::class.java, "achievements.db")
+            .build()
     }
 
     @Provides
-    fun provideDao(achievementsDatabase: AchievementsDatabase):AchievementsDAO{
+    fun provideDao(achievementsDatabase: AchievementsDatabase): AchievementsDAO {
         return achievementsDatabase.achievementsDao()
     }
 

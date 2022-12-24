@@ -4,8 +4,12 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.mycompany.achievementsapp.datasource.models.Achievements
 
-@Database(entities = [Achievements.AchievementsData.Records::class], exportSchema = false, version = 1)
-abstract class AchievementsDatabase :RoomDatabase(){
+@Database(
+    entities = [Achievements.AchievementsData.Records::class],
+    exportSchema = false,
+    version = 1
+)
+abstract class AchievementsDatabase : RoomDatabase() {
 
-    abstract fun achievementsDao():AchievementsDAO
+    abstract fun achievementsDao(): AchievementsDAO
 }
