@@ -1,16 +1,20 @@
 package com.mycompany.achievementsapp.adapters
 
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.mycompany.achievementsapp.R
 import com.mycompany.achievementsapp.databinding.ItemRecordBinding
 import com.mycompany.achievementsapp.datasource.models.Achievements
 
 class RecordAdapter() : RecyclerView.Adapter<RecordAdapter.RecordViewHolder>() {
+
     inner class RecordViewHolder(private val binding: ItemRecordBinding) :
         ViewHolder(binding.root) {
         fun bind(item: Achievements.AchievementsData.Records) {

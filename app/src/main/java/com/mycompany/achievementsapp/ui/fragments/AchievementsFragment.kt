@@ -41,38 +41,38 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
         binding = FragmentAchievementBinding.bind(view)
 
         setUpRecyclerView()
-        initLists()
-        bindData()
         onItemClick()
         activate()
+        bindData()
 
     }
 
     private fun setUpRecyclerView() {
-        achievementsDataAdapter= AchievementsDataAdapter()
-        recordAdapter= RecordAdapter()
 
-        val binding1:FragmentAchievementBinding =
-            DataBindingUtil.setContentView(requireActivity(), R.layout.fragment_achievement)
-        binding1.rvAchievementData.apply {
-            adapter=achievementsDataAdapter
-            layoutManager=LinearLayoutManager(requireContext())
-        }
 
-        val binding2:ItemAchievementDataBinding =
-            DataBindingUtil.setContentView(requireActivity(), R.layout.item_achievement_data)
-        binding2.rvRecords.apply {
-            adapter=recordAdapter
-            layoutManager=GridLayoutManager(requireContext(),2)
-        }
+//        val binding2:ItemAchievementDataBinding =
+//            DataBindingUtil.setContentView(requireActivity(), R.layout.item_achievement_data)
+//        binding2.rvRecords.apply {
+//            adapter=recordAdapter
+//            layoutManager=GridLayoutManager(requireContext(),2)
+//        }
 
     }
 
     fun activate(){
         viewModel.setAchievement()
         viewModel.achievement.observe(viewLifecycleOwner, Observer {
+            achievementsDataAdapter= AchievementsDataAdapter(requireActivity(), it.data)
+            recordAdapter= RecordAdapter()
+
+            val binding1:FragmentAchievementBinding =
+                DataBindingUtil.setContentView(requireActivity(), R.layout.fragment_achievement)
+            binding1.rvAchievementData.apply {
+                adapter=achievementsDataAdapter
+                layoutManager=LinearLayoutManager(requireContext())
+            }
             achievementsDataAdapter.differ.submitList(it.data)
-            recordAdapter.differ.submitList(it.data[0].records)
+
         })
     }
 
@@ -102,12 +102,7 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
 //                        record8, record9, record10, record11, record12
 //                    )
 //
-//                for ((index, record) in recordsList.withIndex()) {
-//                    if (!record!!.active!!) {
-//                        iconsList[index].isEnabled = false
-//                        iconsList[index].alpha = 0.4f
-//                    }
-//                }
+
 //            })
 //        }
     }
@@ -149,46 +144,5 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
 //                }
 //            })
         }
-    }
-
-
-    private fun initLists() {
-//        binding.apply {
-//            iconsList =
-//                listOf(
-//                    ivIcon1, ivIcon2, ivIcon3, ivIcon4, ivIcon5, ivIcon6, ivIcon7, ivIcon8,
-//                    ivIcon9, ivIcon10, ivIcon11, ivIcon12
-//                )
-//            labelsList =
-//                listOf(
-//                    tvLabel1,
-//                    tvLabel2,
-//                    tvLabel3,
-//                    tvLabel4,
-//                    tvLabel5,
-//                    tvLabel6,
-//                    tvLabel7,
-//                    tvLabel8,
-//                    tvLabel9,
-//                    tvLabel10,
-//                    tvLabel11,
-//                    tvLabel12
-//                )
-//            titlesList =
-//                listOf(
-//                    tvTitle1,
-//                    tvTitle2,
-//                    tvTitle3,
-//                    tvTitle4,
-//                    tvTitle5,
-//                    tvTitle6,
-//                    tvTitle7,
-//                    tvTitle8,
-//                    tvTitle9,
-//                    tvTitle10,
-//                    tvTitle11,
-//                    tvTitle12
-//                )
-//        }
     }
 }

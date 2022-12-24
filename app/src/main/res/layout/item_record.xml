@@ -10,6 +10,7 @@
     </data>
 
     <LinearLayout
+        android:id="@+id/ll_record"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -17,6 +18,7 @@
         android:gravity="center">
 
         <ImageView
+            android:id="@+id/iv_record"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="4dp"
