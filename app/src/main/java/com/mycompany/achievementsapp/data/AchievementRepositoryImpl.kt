@@ -10,7 +10,7 @@ class AchievementRepositoryImpl(
     private val achievementsDAO: AchievementsDAO
 ) : AchievementRepository {
 
-    override fun getAllAchievements(): Call<Achievements> {
+    override suspend fun getAllAchievements(): Call<Achievements> {
         return api.getAchievements()
     }
 
@@ -18,9 +18,8 @@ class AchievementRepositoryImpl(
         achievementsDAO.insertRecords(record)
     }
 
-    override fun getAllRecords(): LiveData<List<Achievements.AchievementsData.Records>> {
+    override  fun getAllRecords(): LiveData<List<Achievements.AchievementsData.Records>> {
         return achievementsDAO.getAllRecords()
     }
 
-//couroutines with the arch and viewmodel
 }

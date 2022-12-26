@@ -1,11 +1,11 @@
 package com.mycompany.achievementsapp.ui.viewmodels
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
+import androidx.lifecycle.*
 import com.mycompany.achievementsapp.data.AchievementRepository
 import com.mycompany.achievementsapp.datasource.models.Achievements
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,11 +16,9 @@ class AchievementsViewModel @Inject constructor(
     private val repository: AchievementRepository
 ) : ViewModel() {
 
-    var achievement: MutableLiveData<Achievements>
-
-    init {
-        achievement = MutableLiveData()
-    }
+    val successAchievement: MutableLiveData<Achievements> = MutableLiveData()
+    val errorAchievement: MutableLiveData<String> = MutableLiveData()
+    val loadingAchievement: MutableLiveData<Boolean> = MutableLiveData()
 
     fun saveRecord(records: Achievements.AchievementsData.Records) = liveData {
         try {
@@ -31,23 +29,37 @@ class AchievementsViewModel @Inject constructor(
         emit(true)
     }
 
+
     fun getAllRecords() = repository.getAllRecords()
 
+
     fun getAchievementObservable(): MutableLiveData<Achievements> {
-        return achievement
+        return successAchievement
     }
 
     fun setAchievement() {
-        repository.getAllAchievements().enqueue(object : Callback<Achievements?> {
-            override fun onResponse(call: Call<Achievements?>, response: Response<Achievements?>) {
-                if (response.isSuccessful) {
-                    achievement.postValue(response.body())
+        viewModelScope.launch(Dispatchers.IO) {
+            loadingAchievement.postValue(true)
+            repository.getAllAchievements().enqueue(object : Callback<Achievements?> {
+                override fun onResponse(
+                    call: Call<Achievements?>,
+                    response: Response<Achievements?>
+                ) {
+                    if (response.isSuccessful) {
+                        try {
+                            successAchievement.postValue(response.body())
+                        } catch (e: Exception) {
+                            errorAchievement.postValue(e.message)
+                        }
+                    }
+
                 }
 
-            }
-
-            override fun onFailure(call: Call<Achievements?>, t: Throwable) {
-            }
-        })
+                override fun onFailure(call: Call<Achievements?>, t: Throwable) {
+                    errorAchievement.postValue(t.message)
+                }
+            })
+            loadingAchievement.postValue(false)
+        }
     }
 }
