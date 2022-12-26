@@ -31,9 +31,9 @@
             android:background="#C3D7DA"
             android:gravity="center"
             android:padding="4dp"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="40sp"
-            android:text="00:00:00:00"/>
+            android:text="00:00:00:00" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="start"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="25sp" />
 
             <Button
@@ -60,7 +60,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="stop"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:visibility="gone" />
 
@@ -71,7 +71,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="finish"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:visibility="gone" />
 
@@ -82,7 +82,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="save"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:visibility="gone" />
 
@@ -93,7 +93,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="ignore"
-                android:textColor="#ffffff"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 android:visibility="gone" />
 

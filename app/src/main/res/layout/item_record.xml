@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<variable
-    name="record"
-    type="com.mycompany.achievementsapp.datasource.models.Achievements.AchievementsData.Records" />
+
+        <variable
+            name="record"
+            type="com.mycompany.achievementsapp.datasource.models.Achievements.AchievementsData.Records" />
     </data>
 
     <LinearLayout
         android:id="@+id/ll_record"
-        app:changeActivation="@{record}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_margin="4dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical"
+        app:changeActivation="@{record}">
 
         <ImageView
             android:id="@+id/iv_record"
@@ -29,19 +30,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
             android:layout_marginBottom="4dp"
-            android:textColor="#000000"
             android:text="@{record.title}"
+            android:textColor="@color/black"
+            android:textSize="12sp"
             tools:text="record title" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="@{record.label}"
             android:layout_marginBottom="4dp"
-            android:textColor="#000000"
+            android:text="@{record.label}"
+            android:textColor="@color/black"
+            android:textSize="12sp"
             tools:text="record title" />
 
     </LinearLayout>

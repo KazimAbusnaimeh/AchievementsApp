@@ -11,11 +11,17 @@ import com.mycompany.achievementsapp.datasource.models.Achievements
 
 class RecordAdapter() : RecyclerView.Adapter<RecordAdapter.RecordViewHolder>() {
 
-    inner class RecordViewHolder(private val binding: ItemRecordBinding) :
-        ViewHolder(binding.root) {
-        fun bind(item: Achievements.AchievementsData.Records) {
-            binding.record = item
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = RecordViewHolder(
+        ItemRecordBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    )
+
+
+    override fun onBindViewHolder(holder: RecordViewHolder, position: Int) {
+        holder.bind(differ.currentList[position])
+    }
+
+    override fun getItemCount(): Int {
+        return differ.currentList.size
     }
 
     private val differCallback =
@@ -38,16 +44,10 @@ class RecordAdapter() : RecyclerView.Adapter<RecordAdapter.RecordViewHolder>() {
 
     val differ = AsyncListDiffer(this, differCallback)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = RecordViewHolder(
-        ItemRecordBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-    )
-
-
-    override fun onBindViewHolder(holder: RecordViewHolder, position: Int) {
-        holder.bind(differ.currentList[position])
-    }
-
-    override fun getItemCount(): Int {
-        return differ.currentList.size
+    inner class RecordViewHolder(private val binding: ItemRecordBinding) :
+        ViewHolder(binding.root) {
+        fun bind(item: Achievements.AchievementsData.Records) {
+            binding.record = item
+        }
     }
 }

@@ -22,5 +22,5 @@ class AchievementRepositoryImpl(
         return achievementsDAO.getAllRecords()
     }
 
-
+//couroutines with the arch and viewmodel
 }

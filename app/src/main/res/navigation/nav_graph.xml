@@ -23,7 +23,7 @@
         tools:layout="@layout/fragment_races"
         android:id="@+id/racesFragment"
         android:name="com.mycompany.achievementsapp.ui.fragments.RacesFragment"
-        android:label="RacesFragment" >
+        android:label="RacesFragment">
         <action
             android:id="@+id/action_racesFragment_to_achievementsFragment"
             app:destination="@id/achievementsFragment" />
