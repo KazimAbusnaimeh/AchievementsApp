@@ -5,6 +5,9 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface Api {
+    companion object{
+
+    }
     @GET("achievements")
     fun getAchievements(): Call<Achievements>
 }
