@@ -52,14 +52,15 @@ class AchievementsViewModel @Inject constructor(
                             errorAchievement.postValue(e.message)
                         }
                     }
-
+                    loadingAchievement.postValue(false)
                 }
 
                 override fun onFailure(call: Call<Achievements?>, t: Throwable) {
                     errorAchievement.postValue(t.message)
+                    loadingAchievement.postValue(false)
                 }
             })
-            loadingAchievement.postValue(false)
+
         }
     }
 }

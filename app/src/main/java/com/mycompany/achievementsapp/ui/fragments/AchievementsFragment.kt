@@ -66,7 +66,8 @@ class AchievementsFragment : Fragment(R.layout.fragment_achievement) {
     }
 
     private fun handleError(exception: String) {
-        Log.d(ACHIEVEMENT_FRAGMENT_TAG, "handleError: $exception")
+        val flag= exception.isNotEmpty()
+        binding.tvError.isVisible=flag
     }
 
 }
